@@ -99,11 +99,12 @@ namespace IotWeb.Server
                                     if (m_handler != null)
                                     {
                                         client.ReceiveTimeout = 0;
+                                        var netStream = new NetworkStream(client, false);
                                         m_handler(
                                             this,
                                             hostname,
-                                            new NetworkStream(client, FileAccess.Read, false),
-                                            new NetworkStream(client, FileAccess.Write, false)
+                                            netStream,
+                                            netStream
                                             );
                                     }
                                 }
@@ -113,7 +114,7 @@ namespace IotWeb.Server
                                 }
                             // Finally, we can close the socket
                             client.Shutdown(SocketShutdown.Both);
-                            client.Close();
+                            client.Dispose();
                             });
                         }
                     }

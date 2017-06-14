@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net46;netstandard1.3</TargetFrameworks>
+    <AssemblyVersion>0.9.1</AssemblyVersion>
+    <DebugType>portable</DebugType>
+  
+    <!-- NuGet Package -->
+    <PackageId>IotWeb.NETStandard</PackageId>
+    <PackageVersion>$(AssemblyVersion)</PackageVersion>
+    <Authors>The Sensaura Project, Rohans</Authors>
+    <PackageLicenseUrl>http://sensaura.org/pages/tools/iotweb/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Rohansi/iotweb</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>This library provides a simple HTTP server with WebSocket support. It has been forked to work with .NET Standard.</Description>
+    <PackageTags>iot server web http websocket</PackageTags>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\mimetypes.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\mimetypes.txt" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Threading.ThreadPool" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

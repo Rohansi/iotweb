@@ -1,4 +1,6 @@
-# Embedded HTTP and WebSocket Server for UWP/.NET 4.5
+# Embedded HTTP and WebSocket Server for .NET 4.6 / .NET Standard 1.3
+
+*This is a fork of [iotweb](https://github.com/sensaura-public/iotweb) adding .NET Standard build support.*
 
 The IotWeb class library allows you to embed a simple HTTP and WebSocket server into your C# application. The library supports both the .NET 4.5 framework as well as the Universal Windows Platform allowing you to target [Mono](http://www.mono-project.com/), Windows Desktop and [Windows 10 IoT Core](https://dev.windows.com/en-us/iot).
 
